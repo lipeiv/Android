@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">硬件测试</string>
+    <string name="switch1">高负荷</string>
+    <string name="switch2">震动</string>
+    <string name="switch3">WIFI/BT/GPS/FLASH</string>
+    <string name="button1">基本功能</string>
+    <string name="button2">动画</string>
+    <string name="button3">电池曲线</string>
+    <string name="button4">MTK电流精度检测</string>
+    <string name="current">当前电流</string>
+    <string name="current1">平均电流</string>
+    <string name="title_activity_current">CurrentActivity</string>
+    <string name="title_activity_basic">basicActivity</string>
+</resources>

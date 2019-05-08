@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D1EEEE"
+    tools:context="com.example.lipeipei.test.CurrentActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/current"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:id="@+id/textCurrent1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/textCurrent11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:text="@string/current1"/>
+    <TextView
+        android:id="@+id/textCurrent12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:textColor="#000" />
+
+</LinearLayout>

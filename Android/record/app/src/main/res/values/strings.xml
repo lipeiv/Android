@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">录音机</string>
+    <string name="texton">正在录音</string>
+    <string name="textoff">点击录音</string>
+</resources>

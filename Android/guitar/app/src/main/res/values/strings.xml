@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">吉他工具</string>
+    <string name="text1">频率</string>
+    <string name="text2">音调</string>
+    <string name="button1">节拍器</string>
+    <string name="button2">和弦图</string>
+    <string name="title_activity_harm">harmActivity</string>
+</resources>

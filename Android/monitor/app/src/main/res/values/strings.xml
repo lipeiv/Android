@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">监控</string>
+    <string name="bt1">开始</string>
+    <string name="bt2">停止</string>
+</resources>
