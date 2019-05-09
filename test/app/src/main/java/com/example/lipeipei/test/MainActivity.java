@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
     public Camera camera;
     public WifiManager wifiManager;
     private BatteryChangedReceiver receiver = new BatteryChangedReceiver();
-//    private android.hardware.Parameters param = null;
+    //private android.hardware.Parameters param = null;
     //Camera.Parameters param = camera.getParameters();
     //CameraPrewarmService getParameters = camera.getParameters;
 
@@ -245,7 +245,7 @@ param.getFlashMode();
                 case BatteryManager.BATTERY_STATUS_CHARGING:
                     strStatus = "充电中…";
                     strScreen ="最暗";
-                    setLight(MainActivity.this,0);
+                    setLight(MainActivity.this,10);
                     break;
                 case BatteryManager.BATTERY_STATUS_DISCHARGING:
                     strStatus = "放电中…";
@@ -253,7 +253,7 @@ param.getFlashMode();
                     setLight(MainActivity.this,255);
                     break;
                 case BatteryManager.BATTERY_STATUS_NOT_CHARGING:
-                    strStatus = "放电中…";
+                    strStatus = "未充电";
                     strScreen = "最亮";
                     setLight(MainActivity.this,255);
                     break;
