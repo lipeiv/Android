@@ -11,4 +11,5 @@
     <string name="current1">平均电流</string>
     <string name="title_activity_current">CurrentActivity</string>
     <string name="title_activity_basic">basicActivity</string>
+    <string name="title_activity_battery">Battery</string>
 </resources>

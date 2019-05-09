@@ -52,25 +52,27 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTvVoltage = (TextView) findViewById(R.id.voltage);
-        mTvTemperature = (TextView) findViewById(R.id.temp);
-        mTvLevel = (TextView) findViewById(R.id.level);
-        mTvStatus = (TextView) findViewById(R.id.status);
-        mTvScreen = (TextView) findViewById(R.id.screen);
-        aSwitch = (Switch) findViewById(R.id.switch1);
-        bSwitch = (Switch) findViewById(R.id.switch2);
-        cSwitch = (Switch) findViewById(R.id.switch3);
-        Button button1 = (Button)findViewById(R.id.button1);
-        Button button2 = (Button)findViewById(R.id.button2);
-        Button button3 = (Button)findViewById(R.id.button3);
-        Button button4 = (Button)findViewById(R.id.button4);
+        mTvVoltage = findViewById(R.id.voltage);
+        mTvTemperature = findViewById(R.id.temp);
+        mTvLevel = findViewById(R.id.level);
+        mTvStatus = findViewById(R.id.status);
+        mTvScreen = findViewById(R.id.screen);
+        aSwitch = findViewById(R.id.switch1);
+        bSwitch = findViewById(R.id.switch2);
+        cSwitch = findViewById(R.id.switch3);
+        Button button1 = findViewById(R.id.button1);
+        Button button2 = findViewById(R.id.button2);
+        Button button3 = findViewById(R.id.button3);
+        Button button4 = findViewById(R.id.button4);
         registerReceiver(receiver, getFilter());
 
 
         myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
 
 
-        Toast.makeText(MainActivity.this,"永不休眠已打开！",Toast.LENGTH_LONG).show();
+        Toast toast = Toast.makeText(MainActivity.this,"永不休眠已打开！",Toast.LENGTH_SHORT);
+        toast.setGravity(0,0,1560);
+        toast.show();
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,8 +95,8 @@ public class MainActivity extends AppCompatActivity
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent intent = new Intent(MainActivity.this,CurrentActivity.class);
-               // startActivity(intent);
+                Intent intent = new Intent(MainActivity.this,Battery_Activity.class);
+                startActivity(intent);
             }
         });
         button4.setOnClickListener(new View.OnClickListener() {
@@ -164,7 +166,7 @@ public class MainActivity extends AppCompatActivity
     }
     void openwifi()
     {
-        //wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+//        wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         if(!wifiManager.isWifiEnabled())
         {wifiManager.setWifiEnabled(true);}
     }
