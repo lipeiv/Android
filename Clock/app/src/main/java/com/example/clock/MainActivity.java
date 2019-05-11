@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
@@ -46,15 +47,15 @@ public class MainActivity extends AppCompatActivity {
         else
             Toast.makeText(this, month + "月" + day + "日" + hour + ":" + minute, Toast.LENGTH_LONG).show();
 
-        setLight(MainActivity.this,1);
+
+        if (hour<24) {
+            Intent intent = new Intent(MainActivity.this, ClockActivity.class);
+            startActivity(intent);
+        }
+
     }
 
-    void setLight(Activity context, int brightness)
-    {
-        WindowManager.LayoutParams lp = context.getWindow().getAttributes();
-        lp.screenBrightness = Float.valueOf(brightness) * (1f / 255f);
-        context.getWindow().setAttributes(lp);
-    }
+
 
 
 }
