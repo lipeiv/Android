@@ -1,18 +1,12 @@
 package com.example.clock;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 public class ClockActivity extends AppCompatActivity {
-    SensorManager sm;
-    Sensor lightSensor;
-    SensorEvent event;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,16 +21,12 @@ public class ClockActivity extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        //获取SensorManager对象
-        sm = (SensorManager) getSystemService(SENSOR_SERVICE);
-        //获取Sensor对象
-        lightSensor = sm.getDefaultSensor(Sensor.TYPE_LIGHT);
-        float light = event.values[0];
-        setLight(ClockActivity.this, light);
+        setLight(ClockActivity.this, 0);  //设置屏幕亮度，最低为1；
+
 
     }
 
-
+    //定义屏幕亮度函数
     void setLight(Activity context, float brightness)
     {
         WindowManager.LayoutParams lp = context.getWindow().getAttributes();
