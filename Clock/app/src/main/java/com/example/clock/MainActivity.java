@@ -43,11 +43,10 @@ public class MainActivity extends AppCompatActivity {
         int day = calendar.get(Calendar.DAY_OF_MONTH);
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
+        if (hour<24){
+            Intent intent = new Intent(MainActivity.this, ClockActivity.class);
 
-        Intent intent = new Intent(MainActivity.this, ClockActivity.class);
-        PendingIntent pi = PendingIntent.getActivity(MainActivity.this,0,intent,0);
-        AlarmManager alarm = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),pi);
+        }
 
     }
 
