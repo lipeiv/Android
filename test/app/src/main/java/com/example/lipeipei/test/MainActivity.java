@@ -1,13 +1,12 @@
 package com.example.lipeipei.test;
-
 import android.app.Activity;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Camera;
 import android.graphics.Color;
+import android.hardware.camera2.CameraManager;
 import android.net.wifi.WifiManager;
 import android.os.BatteryManager;
 import android.os.Vibrator;
@@ -20,31 +19,19 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
 public class MainActivity extends AppCompatActivity
 {
     private Switch aSwitch, bSwitch, cSwitch;                                       //实例化
     private TextView mTvVoltage, mTvTemperature, mTvLevel, mTvStatus, mTvScreen;
     private Vibrator myVibrator;
-    public Camera camera;
-    public WifiManager wifiManager;
     private BatteryChangedReceiver receiver = new BatteryChangedReceiver();
-    //private android.hardware.Parameters param = null;
-    //Camera.Parameters param = camera.getParameters();
-    //CameraPrewarmService getParameters = camera.getParameters;
-
-
+    private CameraManager manager;
+    private WifiManager mWifiManager;
     @Override
     protected void onPostResume() {
         // TODO Auto-generated method stub
         super.onPostResume();}
 
-    //@Override
-    //protected void onStop() {
-    //    // TODO Auto-generated method stub
-    //    super.onStop();
-    ///   camera.release();}
 
     @Override
     protected void onCreate(Bundle savedInstanceState)                       //onCreate Bundle
@@ -65,11 +52,7 @@ public class MainActivity extends AppCompatActivity
         Button button3 = findViewById(R.id.button3);
         Button button4 = findViewById(R.id.button4);
         registerReceiver(receiver, getFilter());
-
-
         myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
-
-
         Toast toast = Toast.makeText(MainActivity.this,"永不休眠已打开！",Toast.LENGTH_SHORT);
         toast.setGravity(0,0,1560);
         toast.show();
@@ -106,7 +89,6 @@ public class MainActivity extends AppCompatActivity
              startActivity(intent);
             }
         });
-
 
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()   //监听switch1
         {
@@ -150,13 +132,13 @@ public class MainActivity extends AppCompatActivity
             {
                 if(isChecked)
                 {                                                           //camera.startPreview();
-                    //torch_on();
+                    torch_on();
                     openwifi();
 
                 }
                 else
                 {
-                    //   torch_off();
+                    torch_off();
                     closewifi();
                 }
             }
@@ -166,29 +148,34 @@ public class MainActivity extends AppCompatActivity
     }
     void openwifi()
     {
-//        wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-        if(!wifiManager.isWifiEnabled())
-        {wifiManager.setWifiEnabled(true);}
+        mWifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        mWifiManager.setWifiEnabled(true);
     }
 
     void closewifi()
     {
-        //wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-        if(wifiManager.isWifiEnabled())
-        {wifiManager.setWifiEnabled(false);}
+        mWifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        mWifiManager.setWifiEnabled(false);
     }
 
-    /*
-void torch_on(){
-    param.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-    camera.setParameters(param);}
 
-void  torch_off(){
-    param.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-    camera.setParameters(param);
-param.getFlashMode();
-}
-*/
+    void torch_on()  {                                                        //打开补光灯
+        try {
+            manager = (CameraManager) this.getSystemService(Context.CAMERA_SERVICE);
+            manager.setTorchMode("0", true);// "0"是主闪光灯
+        } catch (Exception e) {}
+    }
+
+
+    void  torch_off() {                                                           //关闭补光灯
+        try {
+            if (manager == null) {
+                return;
+            }
+            manager.setTorchMode("0", false);
+        } catch (Exception e) {}
+
+    }
 
 
     private IntentFilter getFilter()                                            //定义电池监控
