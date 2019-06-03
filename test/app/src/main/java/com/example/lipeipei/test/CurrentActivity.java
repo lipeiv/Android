@@ -21,50 +21,50 @@ public class CurrentActivity extends AppCompatActivity {
         int result1,result2, result3,result4,result5,result6,result7,result8,result9,result10,sum,average;
 
         result1=getCurrent();
-        textView1 =(TextView) findViewById(R.id.textCurrent1);
+        textView1 = findViewById(R.id.textCurrent1);
         textView1.setText(result1+"mA");
 
         result2=getCurrent();
-        textView2 =(TextView) findViewById(R.id.textCurrent2);
+        textView2 = findViewById(R.id.textCurrent2);
         textView2.setText(result2+"mA");
 
         result3=getCurrent();
-        textView3 =(TextView) findViewById(R.id.textCurrent3);
+        textView3 = findViewById(R.id.textCurrent3);
         textView3.setText(result3+"mA");
 
         result4=getCurrent();
-        textView4 =(TextView) findViewById(R.id.textCurrent4);
+        textView4 = findViewById(R.id.textCurrent4);
         textView4.setText(result4+"mA");
 
         result5=getCurrent();
-        textView5 =(TextView) findViewById(R.id.textCurrent5);
+        textView5 = findViewById(R.id.textCurrent5);
         textView5.setText(result5+"mA");
 
         result6=getCurrent();
-        textView6 =(TextView) findViewById(R.id.textCurrent6);
+        textView6 = findViewById(R.id.textCurrent6);
         textView6.setText(result6+"mA");
 
         result7=getCurrent();
-        textView7 =(TextView) findViewById(R.id.textCurrent7);
+        textView7 = findViewById(R.id.textCurrent7);
         textView7.setText(result7+"mA");
 
         result8=getCurrent();
-        textView8 =(TextView) findViewById(R.id.textCurrent8);
+        textView8 = findViewById(R.id.textCurrent8);
         textView8.setText(result8+"mA");
 
         result9=getCurrent();
-        textView9 =(TextView) findViewById(R.id.textCurrent9);
+        textView9 = findViewById(R.id.textCurrent9);
         textView9.setText(result9+"mA");
 
         result10=getCurrent();
-        textView10 =(TextView) findViewById(R.id.textCurrent10);
+        textView10 = findViewById(R.id.textCurrent10);
         textView10.setText(result10+"mA");
 
 
 
         sum=(result1+result2+result3+result4+result5+result6+result7+result8+result9+result10);
         average =sum / 10;
-        textView12 =(TextView) findViewById(R.id.textCurrent12);
+        textView12 = findViewById(R.id.textCurrent12);
         textView12.setText(average+"mA");
 
 

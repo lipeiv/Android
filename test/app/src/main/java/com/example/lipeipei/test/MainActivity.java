@@ -1,6 +1,7 @@
 package com.example.lipeipei.test;
 import android.app.Activity;
 import android.app.Service;
+import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity
     private BatteryChangedReceiver receiver = new BatteryChangedReceiver();
     private CameraManager manager;
     private WifiManager mWifiManager;
+    BluetoothAdapter bt = BluetoothAdapter.getDefaultAdapter();
+
+
     @Override
     protected void onPostResume() {
         // TODO Auto-generated method stub
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity
         Button button4 = findViewById(R.id.button4);
         registerReceiver(receiver, getFilter());
         myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
+
+
         Toast toast = Toast.makeText(MainActivity.this,"永不休眠已打开！",Toast.LENGTH_SHORT);
         toast.setGravity(0,0,1560);
         toast.show();
@@ -147,13 +153,15 @@ public class MainActivity extends AppCompatActivity
 
     }
     void openwifi()
-    {
+    {   bt.enable();
+
         mWifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         mWifiManager.setWifiEnabled(true);
     }
 
     void closewifi()
-    {
+    {   bt.disable();
+
         mWifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         mWifiManager.setWifiEnabled(false);
     }
