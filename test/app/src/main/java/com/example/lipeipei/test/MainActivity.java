@@ -259,7 +259,7 @@ public class MainActivity extends AppCompatActivity
             mTvStatus.setText("状态:" + strStatus);
             mTvScreen.setText("屏幕:"+strScreen);
         }
-    };
+    }
 
 
 }
