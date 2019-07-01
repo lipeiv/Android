@@ -1,4 +1,4 @@
-package com.example.lipeipei.weather;
+package com.example.weather;
 
 import org.junit.Test;
 

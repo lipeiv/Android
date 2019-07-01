@@ -1,5 +1,7 @@
 package com.example.monitor;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sView.getHolder().setFixedSize(320, 280);
         sView.getHolder().setKeepScreenOn(true);
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
