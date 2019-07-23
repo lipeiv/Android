@@ -17,7 +17,6 @@ public class basicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_basic);
 
 
-
         }
 
         @Override
