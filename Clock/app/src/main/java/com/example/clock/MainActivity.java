@@ -3,17 +3,11 @@ package com.example.clock;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-
+        /*
         //设置音乐播放器
         // MediaPlayer player = MediaPlayer.create(this,R.raw.d);
         //MediaPlayer player = new MediaPlayer();
@@ -45,12 +39,6 @@ public class MainActivity extends AppCompatActivity {
         int minute = calendar.get(Calendar.MINUTE);
         if (hour<24){
             Intent intent = new Intent(MainActivity.this, ClockActivity.class);
-
-        }
-
+        */
     }
-
-
-
-
 }
