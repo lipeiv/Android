@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     contactsList.add(map.toString());
                     //刷新listview
                     adapter.notifyDataSetChanged();
+                    //HttpURLConnection
                     System.out.println(map);
                 }
             }catch (Exception e){
