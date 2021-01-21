@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
                         ));
                         //把取出的两类数据进行拼接，中间加换行符，然后添加到listview中
                         map.put(displayName, number);
-                        //contactsList.add(displayName+"\n"+number);
+                        contactsList.add(displayName+"\n"+number);
                     }
-                    contactsList.add(map.toString());
+                    //contactsList.add(map.toString());
                     //刷新listview
                     adapter.notifyDataSetChanged();
+                    System.out.println(map.toString());
                     //HttpURLConnection
-                    System.out.println(map);
                 }
             }catch (Exception e){
                 e.printStackTrace();
