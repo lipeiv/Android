@@ -7,10 +7,8 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -69,9 +67,8 @@ public class MainActivity extends AppCompatActivity {
                         ));
                         //把取出的两类数据进行拼接，中间加换行符，然后添加到listview中
                         map.put(displayName, number);
-                        //contactsList.add(displayName+"\n"+number);
+                        contactsList.add(displayName+"\n"+number);
                     }
-                    contactsList.add(map.toString());
                     //刷新listview
                     adapter.notifyDataSetChanged();
                     //HttpURLConnection
