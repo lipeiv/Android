@@ -69,10 +69,12 @@ public class MainActivity extends AppCompatActivity {
                         map.put(displayName, number);
                         contactsList.add(displayName+"\n"+number);
                     }
+                    //contactsList.add(map.toString());
+
                     //刷新listview
                     adapter.notifyDataSetChanged();
+                    System.out.println(map.toString());
                     //HttpURLConnection
-                    System.out.println(map);
                 }
             }catch (Exception e){
                 e.printStackTrace();
