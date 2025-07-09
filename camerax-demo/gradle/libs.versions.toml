@@ -1,0 +1,67 @@
+[versions]
+androidGradlePlugin = "8.9.1"
+androidxComposeBom = "2025.04.00"
+activityKtx = "1.10.1"
+appcompat = "1.7.0"
+camera = "1.4.2"
+coil = "2.7.0"
+coilVideo = "2.4.0"
+constraintlayoutVersion = "2.2.1"
+fragmentKtx = "1.8.6"
+ksp = "2.1.20-2.0.0"
+kotlin = "2.1.20"
+kotlinxCoroutines = "1.10.2"
+material = "1.12.0"
+coreKtx = "1.16.0"
+multidex = "2.0.1"
+composePaging = "3.3.6"
+composeCoil = "2.7.0"
+lifecycle = "2.8.7"
+navigation = "2.8.9"
+viewpager2 = "1.1.0"
+
+[libraries]
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camera" }
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camera" }
+androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "camera" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camera" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coil-video = { module = "io.coil-kt:coil-video", version.ref = "coilVideo" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebase-crashlytics-ktx = { group = "com.google.firebase", name = "firebase-crashlytics-ktx" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material3-windowsize = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityKtx" }
+compose-paging = { group = "androidx.paging", name = "paging-compose", version.ref = "composePaging" }
+compose-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "composeCoil" }
+
+[bundles]
+firebase = ["firebase-analytics-ktx", "firebase-crashlytics-ktx", "firebase-firestore-ktx"]
+compose = ["androidx-compose-material3", "androidx-compose-material3-windowsize", "androidx-compose-foundation", "androidx-compose-ui", "androidx-compose-ui-tooling"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-nav-safeargs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigation" }
